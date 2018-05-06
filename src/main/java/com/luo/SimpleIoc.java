@@ -1,10 +1,11 @@
 package com.luo;
 
 import com.luo.bean.BeanDefine;
-
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
 
+@Slf4j
 public class SimpleIoc implements Ioc {
 
     private final Map<String, BeanDefine> pool = new HashMap(32);
@@ -102,7 +103,7 @@ public class SimpleIoc implements Ioc {
 
     private void addBeanDefine(String name, BeanDefine beanDefine) {
         if (pool.put(name, beanDefine) != null) {
-//            log.warn("Duplicated Bean: {}", name);
+            log.warn("Duplicated Bean: {}", name);
 
         }
     }
@@ -117,7 +118,7 @@ public class SimpleIoc implements Ioc {
         BeanDefine beanDefine = this.getBeanDefine(beanClass, singleton);
 
         if (pool.put(name, beanDefine) != null) {
-//            log.warn("Duplicated Bean: {}", name);
+            log.warn("Duplicated Bean: {}", name);
 
         }
 

@@ -14,7 +14,6 @@ import java.net.URL;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Stream;
 
 @Slf4j
 public abstract class AbstractClassReader implements ClassReader {
